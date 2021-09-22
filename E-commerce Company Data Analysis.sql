@@ -1,9 +1,8 @@
 USE mavenfuzzyfactory;
 
 /*
-1. First, I’d like to show our volume growth. Can you pull overall session and order volume, 
-trended by quarter for the life of the business? Since the most recent quarter is incomplete, 
-you can decide how to handle it.
+Showing volume growth. Displayed attributes include overall session and order volume, 
+trended by quarter for the life of the business.
 */ 
 
 SELECT 
@@ -19,9 +18,8 @@ ORDER BY 1,2
 ;
 
 /*
-2. Next, let’s showcase all of our efficiency improvements. I would love to show quarterly figures 
-since we launched, for session-to-order conversion rate, revenue per order, and revenue per session. 
-
+Showing efficiency improvements, including quarterly figures since business launch,
+for session-to-order conversion rate, revenue per order, and revenue per session. 
 */
 
 SELECT 
@@ -39,8 +37,8 @@ ORDER BY 1,2
 
 
 /*
-3. I’d like to show how we’ve grown specific channels. Could you pull a quarterly view of orders 
-from Gsearch nonbrand, Bsearch nonbrand, brand search overall, organic search, and direct type-in?
+Showing growth across specific channels. Displayed attributes include quarterly view of orders 
+from Gsearch nonbrand, Bsearch nonbrand, brand search overall, organic search, and direct type-in.
 */
 
 
@@ -62,8 +60,8 @@ ORDER BY 1,2
 ;
 
 /*
-4. Next, let’s show the overall session-to-order conversion rate trends for those same channels, 
-by quarter. Please also make a note of any periods where we made major improvements or optimizations.
+Showing the overall session-to-order conversion rate trends for those same channels, 
+by quarter, including any periods where major improvements were made.
 */
 
 SELECT 
@@ -88,8 +86,7 @@ ORDER BY 1,2
 
 
 /*
-5. We’ve come a long way since the days of selling a single product. Let’s pull monthly trending for revenue 
-and margin by product, along with total sales and revenue. Note anything you notice about seasonality.
+Showing monthly trending for revenue and margin by product, along with total sales and revenue.
 */
 
 
@@ -113,8 +110,7 @@ ORDER BY 1,2
 
 
 /*
-6. Let’s dive deeper into the impact of introducing new products. Please pull monthly sessions to 
-the /products page, and show how the % of those sessions clicking through another page has changed 
+Showing monthly sessions to the /products page, and showing if the percentage of those sessions clicking through another page has changed 
 over time, along with a view of how conversion from /products to placing an order has improved.
 */
 
@@ -148,8 +144,8 @@ GROUP BY 1,2
 ;
 
 /*
-7. We made our 4th product available as a primary product on December 05, 2014 (it was previously only a cross-sell item). 
-Could you please pull sales data since then, and show how well each product cross-sells from one another?
+ Showing sales data after the release of 4th cross-sell product (December 05, 2014). 
+ Also showing performance of how well each product cross-sells with eahc other.
 */
 
 CREATE TEMPORARY TABLE primary_products
@@ -158,7 +154,7 @@ SELECT
     primary_product_id, 
     created_at AS ordered_at
 FROM orders 
-WHERE created_at > '2014-12-05' -- when the 4th product was added (says so in question)
+WHERE created_at > '2014-12-05' -- when the 4th product was added
 ;
 
 SELECT
