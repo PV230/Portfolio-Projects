@@ -1,5 +1,3 @@
-USE mavenfuzzyfactory;
-
 /*
 Showing volume growth. Displayed attributes include overall session and order volume, 
 trended by quarter for the life of the business.
